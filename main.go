@@ -5,6 +5,12 @@ import (
 	"net/http"
 )
 
+type Produto struct {
+	Nome, Descricao string
+	Preco           float64
+	Quantidade      int
+}
+
 var temp = template.Must(template.ParseGlob("templates/*.html"))
 
 func main() {
