@@ -15,7 +15,7 @@ var temp = template.Must(template.ParseGlob("templates/*.html"))
 
 func main() {
 	http.HandleFunc("/", index)
-	http.ListenAndServe(":8000", nil)
+	http.ListenAndServe(":3000", nil)
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
@@ -23,6 +23,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 		{Nome: "Camiseta", Descricao: "Na moda", Preco: 39.99, Quantidade: 20},
 		{"Tenis", "Confortavel", 89, 3},
 		{"Oculos", "Kurt Cobain", 9, 666},
+		{"Presente misterioso", "2 reais ou presente misterioso", 2, 1},
 	}
 
 	temp.ExecuteTemplate(w, "Index", produtos)
