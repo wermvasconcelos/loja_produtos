@@ -9,7 +9,7 @@ import (
 )
 
 func conectaComBancoDeDados() *sql.DB {
-	conexao := "user=postgres dbname=alura_loja password=39151626dim host=localhost sslmode=disable"
+	conexao := "user=postgres dbname=alura_loja password=123456 host=localhost sslmode=disable" //porta 5432
 	db, err := sql.Open("postgres", conexao)
 
 	if err != nil {
@@ -28,7 +28,6 @@ type Produto struct {
 var temp = template.Must(template.ParseGlob("templates/*.html"))
 
 func main() {
-
 	http.HandleFunc("/", index)
 	http.ListenAndServe(":3000", nil)
 }
